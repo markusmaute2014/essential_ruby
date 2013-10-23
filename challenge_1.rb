@@ -13,12 +13,19 @@
 #   we usually have to do some research on how the task is done:
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
-# =========================================
+# ==========================================
 # Your code to define the method goes here.
-# =========================================
+# ==========================================
 
-def pmt(interest_rate, number_of_payments, present_value)
+
+
+def pmt(interest_rates, number_of_payments, present_value)
+
+  monthly_payment = ((present_value*interest_rates)*(1+interest_rates)**number_of_payments)/(((1+interest_rates)**number_of_payments)-1)
+  return monthly_payment.round(1)
 
 end
 
-puts "Your monthly payment will be #{pmt(0.01, 60, 30000)}."
+ puts "your monthly payement will be #{pmt(0.01, 60, 30000)}"
+
+
