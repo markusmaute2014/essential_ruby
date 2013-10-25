@@ -18,14 +18,16 @@ loan_quotes = [
 
 puts "Enter the number of payments:"
 nper = gets.chomp.to_i
+# anything user types in is gets.chomp.to_i function (to_i is integer value)
 
 puts "Enter the loan amount:"
 pv = gets.chomp.to_f
+# (to_f is something that has a decimel)
 
 # Now, loop through the array of loan quotes using .each:
 #   For each option, tell the user how much the monthly payment will be to that bank.
 #   Re-use the pmt method that you defined in Challenge 1.
 
-# ====================
-# Your code goes here.
-# ====================
+loan_quotes.each do |zebra|
+puts "Your monthly payment with bank "+ zebra["bank"] +"is going to be " + pmt(zebra["rate"], nper, pv).to_s
+end
